@@ -27,7 +27,8 @@ export default defineConfig({
         description: 'A quick, fun way to help rate a public-speaking exercise.',
         theme_color: '#ffffff',
         background_color: '#ffffff',
-        display: 'standalone',
+        display: 'fullscreen',
+        display_override: ['fullscreen', 'standalone', 'minimal-ui'],
         orientation: 'any',
         start_url: '/',
         icons: [
