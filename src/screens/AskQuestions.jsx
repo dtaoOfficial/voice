@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import AnimatedEmoji from '../components/AnimatedEmoji'
 import { QUESTION_COUNT } from '../lib/config'
 
 export default function AskQuestions({ onContinue }) {
@@ -29,9 +28,7 @@ export default function AskQuestions({ onContinue }) {
           </motion.span>{' '}
           of {QUESTION_COUNT}
         </h2>
-        <p className="mt-4 text-lg text-[var(--text-muted)] md:text-xl">
-          Then tap below <AnimatedEmoji preset="bounceDown">👇</AnimatedEmoji>
-        </p>
+        <p className="mt-4 text-lg text-[var(--text-muted)] md:text-xl">Then tap below</p>
       </div>
 
       <div className="flex gap-3">
