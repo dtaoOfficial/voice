@@ -17,7 +17,17 @@ export default function AskQuestions({ onContinue }) {
     >
       <div className="max-w-sm">
         <h2 className="text-3xl font-extrabold md:text-4xl">
-          Ask me question {asked + 1} of {QUESTION_COUNT}
+          Ask me question{' '}
+          <motion.span
+            key={asked}
+            className="inline-block"
+            initial={{ scale: 1.8, opacity: 0, y: -8 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            transition={{ type: 'spring', stiffness: 260, damping: 14 }}
+          >
+            {asked + 1}
+          </motion.span>{' '}
+          of {QUESTION_COUNT}
         </h2>
         <p className="mt-4 text-lg text-[var(--text-muted)] md:text-xl">
           Then tap below <AnimatedEmoji preset="bounceDown">👇</AnimatedEmoji>
