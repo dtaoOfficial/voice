@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+
+:root {
+  color-scheme: light;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  --bg: #ffffff;
+  --surface: rgba(17, 17, 24, 0.03);
+  --surface-strong: rgba(17, 17, 24, 0.06);
+  --text: #000000;
+  --text-muted: #000000;
+  --accent: #000000;
+  --accent-strong: #000000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito', ui-rounded, 'Segoe UI', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+button {
+  font-family: inherit;
+  touch-action: manipulation;
+}
+
+.glass {
+  background: var(--surface);
+  border: 1px solid rgba(17, 17, 24, 0.08);
+  box-shadow: 0 1px 3px rgba(17, 17, 24, 0.05);
+}

@@ -1,0 +1,35 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: speakgame
+      POSTGRES_PASSWORD: speakgame
+      POSTGRES_DB: speakgame
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  backend:
+    build: ./server
+    restart: unless-stopped
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: speakgame
+      DB_PASSWORD: speakgame
+      DB_NAME: speakgame
+      ADMIN_EMAIL: admin@gmail.com
+      ADMIN_PASSWORD: '123456789'
+    depends_on:
+      - db
+
+  frontend:
+    build: .
+    restart: unless-stopped
+    ports:
+      - '8080:80'
+    depends_on:
+      - backend
+
+volumes:
+  db-data:
